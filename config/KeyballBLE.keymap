@@ -31,26 +31,15 @@
         };
     };
 
-    behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp Q        &kp W         &kp E         &kp R      &kp T                                                                  &kp Y    &kp U  &kp I               &kp O    &kp P
-&mt LCTRL A  &kp S         &kp D         &kp F      &kp G                   &to 1                           &kp ENTER      &kp H    &kp J  &lt_to_layer_0 5 K  &kp L    &lt_to_layer_0 4 SEMICOLON
-&kp Z        &kp X         &kp C         &kp V      &kp B                   &to 6                           &kp ENTER      &kp N    &kp M  &kp COMMA           &kp DOT  &kp FSLH
-&kp LCTRL    &kp LEFT_WIN  &kp LEFT_ALT  &kp SPACE  &lt_to_layer_0 2 SPACE  &lt_to_layer_0 3 RA(GRAVE)      &kp BACKSPACE  &kp RET                                      &kp RA(GRAVE)
+&kp Q        &kp W         &kp E         &kp R      &kp T                            &kp Y    &kp U  &kp I      &kp O    &kp P
+&mt LCTRL A  &kp S         &kp D         &kp F      &kp G  &to 1      &kp ENTER      &kp H    &kp J  &none      &kp L    &none
+&kp Z        &kp X         &kp C         &kp V      &kp B  &to 6      &kp ENTER      &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH
+&kp LCTRL    &kp LEFT_WIN  &kp LEFT_ALT  &kp SPACE  &none  &none      &kp BACKSPACE  &kp RET                             &kp RA(GRAVE)
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
